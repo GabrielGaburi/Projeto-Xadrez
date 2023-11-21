@@ -1,5 +1,7 @@
 package TabuleiroGame;
 
+import Xadrez.pieces.Torre;
+
 public class Tabuleiro {
 	
 	private int linhas;
@@ -29,18 +31,25 @@ public class Tabuleiro {
 		this.colunas = colunas;
 	}
 	
-public Pecas pecas(int linhas, int colunas) {
+	public Pecas pecas(int linhas, int colunas) {
 	
 	return pecas[linhas][colunas];
 	
-}
+	}
 
-public Pecas pecas(Posicao posicao) {
+	public Pecas pecas(Posicao posicao) {
 	return pecas [posicao.getLinha()] [posicao.getColuna()];
 	
-}
+	}
 	
 	
+	public void lugarPeca(Pecas peca, Posicao posicao) {
+		
+		pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+		peca.posicao = posicao;
+		
+	}
+
 	
 	
 
