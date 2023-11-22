@@ -24,10 +24,19 @@ public class PartidaXadrez {
 		}
 		return mat;
 	}
+	
+	private void coloqueNovaPeca(char coluna, int linha, PecasXadrez pecas) {
+		
+		tabuleiro.lugarPeca(pecas, new PosicaoXadrez(coluna, linha).toPosicao());
+		
+		
+		
+	}
 
 	private void configInicial() {
-		tabuleiro.lugarPeca(new Torre(tabuleiro, Color.WHITE), new Posicao(2, 1));
-		tabuleiro.lugarPeca(new Rei(tabuleiro, Color.WHITE), new Posicao(7,4));
-		tabuleiro.lugarPeca(new Rei(tabuleiro, Color.BLACK), new Posicao(0,4));
+		
+		coloqueNovaPeca('b', 6, new Torre(tabuleiro, Color.WHITE));
+		coloqueNovaPeca('e', 8, new Rei(tabuleiro, Color.WHITE));
+		coloqueNovaPeca('e', 1, new Rei(tabuleiro, Color.BLACK));
 	}
 }
